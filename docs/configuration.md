@@ -499,31 +499,31 @@ name: <string>
 
 # Configurations for several notification integrations.
 discord_configs:
-  [ - <discord_config>, ... ]
+  [ - <discord_configs>, ... ]
 email_configs:
-  [ - <email_config>, ... ]
+  [ - <email_configs>, ... ]
 msteams_configs:
-  [ - <msteams_config>, ... ]
+  [ - <msteams_configs>, ... ]
 opsgenie_configs:
-  [ - <opsgenie_config>, ... ]
+  [ - <opsgenie_configs>, ... ]
 pagerduty_configs:
-  [ - <pagerduty_config>, ... ]
+  [ - <pagerduty_configs>, ... ]
 pushover_configs:
-  [ - <pushover_config>, ... ]
+  [ - <pushover_configs>, ... ]
 slack_configs:
-  [ - <slack_config>, ... ]
+  [ - <slack_configs>, ... ]
 sns_configs:
-  [ - <sns_config>, ... ]
+  [ - <sns_configs>, ... ]
 telegram_configs:
-  [ - <telegram_config>, ... ]
+  [ - <telegram_configs>, ... ]
 victorops_configs:
-  [ - <victorops_config>, ... ]
+  [ - <victorops_configs>, ... ]
 webex_configs:
-  [ - <webex_config>, ... ]
+  [ - <webex_configs>, ... ]
 webhook_configs:
-  [ - <webhook_config>, ... ]
+  [ - <webhook_configs>, ... ]
 wechat_configs:
-  [ - <wechat_config>, ... ]
+  [ - <wechat_configs>, ... ]
 ```
 
 ### `<http_config>`
@@ -657,7 +657,7 @@ A `tls_config` allows configuring TLS connections.
 
 These settings allow configuring specific receiver integrations.
 
-### `<discord_config>`
+### `<discord_configs>`
 
 Discord notifications are sent via the [Discord webhook API](https://discord.com/developers/docs/resources/webhook). See Discord's ["Intro to Webhooks" article](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) to learn how to configure a webhook integration for a channel.
 
@@ -678,7 +678,7 @@ webhook_url: <secret>
 [ http_config: <http_config> | default = global.http_config ]
 ```
 
-### `<email_config>`
+### `<email_configs>`
 
 ```yaml
 # Whether to notify about resolved alerts.
@@ -722,7 +722,7 @@ tls_config:
 [ headers: { <string>: <tmpl_string>, ... } ]
 ```
 
-### `<msteams_config>`
+### `<msteams_configs>`
 
 Microsoft Teams notifications are sent via the [Incoming Webhooks](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors) API endpoint.
 
@@ -743,7 +743,7 @@ Microsoft Teams notifications are sent via the [Incoming Webhooks](https://learn
 [ http_config: <http_config> | default = global.http_config ]
 ```
 
-### `<opsgenie_config>`
+### `<opsgenie_configs>`
 
 OpsGenie notifications are sent via the [OpsGenie API](https://docs.opsgenie.com/docs/alert-api).
 
@@ -813,7 +813,7 @@ responders:
 type: <tmpl_string>
 ```
 
-### `<pagerduty_config>`
+### `<pagerduty_configs>`
 
 PagerDuty notifications are sent via the [PagerDuty API](https://developer.pagerduty.com/documentation/integration/events).
 PagerDuty provides [documentation](https://www.pagerduty.com/docs/guides/prometheus-integration-guide/) on how to integrate. There are important differences with Alertmanager's v0.11 and greater support of PagerDuty's Events API v2.
@@ -902,7 +902,7 @@ href: <tmpl_string>
 text: <tmpl_string>
 ```
 
-### `<pushover_config>`
+### `<pushover_configs>`
 
 Pushover notifications are sent via the [Pushover API](https://pushover.net/api).
 
@@ -955,7 +955,7 @@ token_file: <filepath>
 [ http_config: <http_config> | default = global.http_config ]
 ```
 
-### `<slack_config>`
+### `<slack_configs>`
 
 Slack notifications can be sent via [Incoming webhooks](https://api.slack.com/messaging/webhooks) or [Bot tokens](https://api.slack.com/authentication/token-types).
 
@@ -1041,7 +1041,7 @@ value: <tmpl_string>
 [ short: <boolean> | default = slack_config.short_fields ]
 ```
 
-### `<sns_config>`
+### `<sns_configs>`
 
 ```yaml
 # Whether to notify about resolved alerts.
@@ -1101,7 +1101,7 @@ attributes:
 [ role_arn: <string> ]
 ```
 
-### `<telegram_config>`
+### `<telegram_configs>`
 
 ```yaml
 # Whether to notify about resolved alerts.
@@ -1133,7 +1133,7 @@ attributes:
 [ http_config: <http_config> | default = global.http_config ]
 ```
 
-### `<victorops_config>`
+### `<victorops_configs>`
 
 VictorOps notifications are sent out via the [VictorOps API](https://help.victorops.com/knowledge-base/rest-endpoint-integration-guide/)
 
@@ -1171,7 +1171,7 @@ routing_key: <tmpl_string>
 [ http_config: <http_config> | default = global.http_config ]
 ```
 
-### `<webhook_config>`
+### `<webhook_configs>`
 
 The webhook receiver allows configuring a generic receiver.
 
@@ -1227,7 +1227,7 @@ There is a list of
 [integrations](https://prometheus.io/docs/operating/integrations/#alertmanager-webhook-receiver) with
 this feature.
 
-### `<wechat_config>`
+### `<wechat_configs>`
 
 WeChat notifications are sent via the [WeChat
 API](http://admin.wechat.com/wiki/index.php?title=Customer_Service_Messages).
@@ -1255,7 +1255,7 @@ API](http://admin.wechat.com/wiki/index.php?title=Customer_Service_Messages).
 [ to_tag: <string> | default = '{{ template "wechat.default.to_tag" . }}' ]
 ```
 
-### `<webex_config>`
+### `<webex_configs>`
 
 ```yaml
 # Whether to notify about resolved alerts.
